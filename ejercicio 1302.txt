@@ -1,0 +1,44 @@
+# funciones.py:
+def prueba(a,b):
+    print(a,b)
+    a = a+1
+    a = b+2
+    return(a,b)
+
+
+/// Primera vuelta ///
+En la primera vuelta a tomaria el valor de 2 y b el valor de 3,luego
+se haria el calculo y a sumaria 1 y b sumaria 2 quedando a=3 y b=5.
+
+/// Segunda vuelta ///
+En la segunda vuelta a pasaria a ser 5 y b 7, hariamos el calculo y nos quedaria
+a=6 y b=9.
+
+/// Tercera vuelta ///
+En la ultima vuelta el valor de a pasaria a ser 8 y b 11, hariamos el calculo
+y nos quedaria un valor de a=9 y b=13.
+
+
+#programa.py:
+from funciones import *
+
+a = int(input("Ingrese un numero entero: "))
+b = int(input("Ingrese un numero entero: "))
+
+for i in range(3):
+    a , b = (prueba(a,b))
+    a = a + 2
+    b = b + 2  
+
+
+/// Primera vuelta ///
+En la primera vuelta a y b se convierten en (prueba(3,5)) y realizan sus calculos
+a+2 y b+2 quedando a=5 y b=7.
+
+/// Segunda vuelta ///
+En la segunda vuelta a obtiene el valor nuevamente de (prueba(6,9)) y realizan
+sus calculos a+2 y b+2 quedando a=8 y b=11.
+
+/// Tercera vuelta ///
+En la ultima vuelta a obtiene el valor nuevamente de (prueba(9,13)) y realizan sus calculos
+a+2 y b+2 quedando a=11 y b=15.
