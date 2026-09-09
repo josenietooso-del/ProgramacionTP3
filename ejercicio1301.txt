@@ -1,0 +1,45 @@
+# funciones.py:
+def prueba(x,y):
+    print(a,b)
+    x = x+1
+    y = y+2
+    return(x,y)
+
+/// Primera vuelta///
+ Si ingresamos a=2 y b=3 en la primera vuelta el valor de la funcion
+x toma el valor de a y y el valor de b, luego x suma 1 y y suma 2
+quedarian los valores x=3 y y=5.
+
+/// Segunda vuelta///
+En la segunda vuelta x comienza con un valor de 4 y y con un valor de 7 
+porque toman los valores de a y b, luego x suma 1 y y suma 2 quedando
+x=5 y y=9.
+
+/// Tercera vuelta///
+En la ultima vuelta x comienza con un valor de 5 y y con un valor de 7,
+luego x suma 1 y y suma 2 quedando un valor de x=6 y y=9
+
+
+#programa.py:
+from funciones import *
+
+a = int(input("Ingrese un numero entero: "))
+b = int(input("Ingrese un numero entero: "))
+
+for i in range(3):
+    print (prueba(a,b))
+    a = a + 1
+    b = b + 2
+
+/// Primera vuelta///
+ En la primera vuelta el print imprime el valor que retorno la funcion
+en este caso seria el valor de (prueba(3,5)),luego hace el calculo y suma
+a+1 y b+2,quedaria un valor de a=4 y b=7
+
+/// Segunda vuelta///
+En la segunda vuelta a comienza con un valor de 4 y b con un valor de 7
+al hacer el calculo a suma 1 y b suma 2,quedando a=5 y b=7.
+
+/// Tercera vuelta///
+En la ultima vuelta a comienza con un valor de 5 y b con un valor de 7,
+al hacer el calculo a suma 1 y b suma 2 ,quedando un a=6 y b=9
