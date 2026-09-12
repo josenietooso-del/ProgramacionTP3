@@ -1,0 +1,57 @@
+#Funciones.py
+def validar_dni(dni):
+    cantidad = 0
+    while dni !=0:
+        cantidad = cantidad + 1
+        dni = dni // 10
+    return cantidad == 8
+
+
+#Programa.py:
+from funciones import*
+mayor =-1
+dni =int(imput("DNI :"))
+while dni != 0:
+    if validar_dni(dni):
+       nombre = imput("Nombre: ")
+       edad = int(imput("Edad: "))
+       if edad > mayor:
+          mayor = edad
+          nombre_mayor = nombre
+    
+    else:
+        print("DNi invalido,vuelve a ingresar: ")
+    dni=int(imput("DNI: "))
+print("Nombre de la persona mayor: ",nombre_mayor)  
+
+
+///Proceso:
+Primer ingreso:
+DNI:34567890
+Nombre:Maria Gimenez
+Edad:18
+
+Segundo ingreso:
+DNI:28907678
+Nombre:Carlos Alberto Sanchez
+Edad:21
+
+Tercer ingreso:
+0
+
+En la funcion al ingresar el dni el bucle while pregunta que mientras dni sea 
+distinto de 0 , la variable cantidad suma 1, cuando dni es igual a 0 sale del while 
+y si cantidad es igual a 8 entonces retorna en TRUE, en los dos primeros casos
+el valor sera TRUE pero en el tercer ingreso sera FALSE porque es un numero 0 y no  se cumple la condicion del while.
+
+En el programa en los dos primeros ingresos entra en el bucle while porque validar_dni is TRUE
+luego se ingresan los datos nombre y edad, cuando se ingresa la edad pregunta si edad es mayor
+que mayor(-1),si es asi toma el valor de la variable edad.Por ultimo imprime el nombre de la persona mayor.
+En el caso del tercer ingreso no entra en el bucle while porque no se cumple la condicion por lo que directamenta
+pasa al else que te imprime que es DNI ingresado es invalido y te hace ingresar un nuevo DNI.
+
+///Que sucede si se ingresa el DNI 3456782233?
+Al ingresar el dato la funcion hace la division correctamente del while,dando como resultado 9 veces 
+el valor de cantidad por lo que el valor no retorna y se torna FALSE.
+Luego en el programa no entra en el bucle while porque no se cumple la condicion
+asi que entra en el else y te pide ingresar nuevamente un DNI.
