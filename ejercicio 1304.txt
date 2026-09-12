@@ -1,0 +1,65 @@
+# ------ OPCIÓN 1 ------
+
+# funciones.py:
+def escribe_media():
+    media = (a + b) / 2
+    print("La media de ", a, " y ", b, " es: ", media)
+    return
+
+
+# programa.py:
+from funciones import *
+
+a = 3
+b = 5
+
+escribe_media()
+
+/// Aqui escribe_media() imprime "La media de 3 y 5 es : 4.0.
+Esto se debe a que al a tener un valor de 3 y b un valor de 5 y hacer la division nos da un numero con coma,
+por lo que nos queda 4.0,returna el valor y en el programa al llamar a la funcion escribe_media()lo que hace es imprimir el valor 
+del print.Esta opcion funciona pero al tener las variables fuera de la funcion
+no es recomendable ya que no es reutilizable.
+
+# ------ OPCIÓN 2 ------
+
+# funciones.py:
+def escribe_media(x, y):
+    media = (x + y) / 2
+    print("La media de ", a, " y ", b, " es: ", media)
+    return
+
+# programa.py:
+from funciones import*
+
+a = 3
+b = 5
+
+escribe_media(a, b)
+
+/// Aqui en la fucnion x toma el valor de a y y toma el valor de b, quedaria 
+escribe_media(3,5),hariamos el calculo y nos quedaria 4.0 y pasaria al print.
+el print quedaria "La media de 3 y 5 es : 4.0".Esta opcion funciona pero esta mal diseñada
+porque los parametros los recibe pero no los utiliza en el print asi que si hubiera un for esta opcion
+no seria valida.
+
+# ------ OPCIÓN 3 ------
+
+# funciones.py:
+def calcula_media(x, y):
+    resultado = (x + y) / 2
+    return resultado
+
+
+# programa.py:
+from funciones import *
+
+a = 3
+b = 5
+
+print("La media de ", a, " y ", b, " es: ", calcula_media(a, b))
+
+/// Aqui funciona correctamente porque los valores de x y y toman los valores de a y b,
+el print se encuentra en el programa asi que es la practica mas correcta
+este ejecuta "La media de 3 y 5 es: 4.0",es la mejor opcion porque hace los calulos en la funcion y despues el print esta en el 
+programa con los datos bien representados.
